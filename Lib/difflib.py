@@ -726,12 +726,12 @@ def get_close_matches(word, possibilities, n=3, cutoff=0.6):
         if s.real_quick_ratio() >= cutoff and \
            s.quick_ratio() >= cutoff and \
            s.ratio() >= cutoff:
-            result.append((s.ratio(), x))
+            result.append((round(s.ratio()), x))
 
     # Move the best scorers to head of list
     result = _nlargest(n, result)
     # Strip scores for the best n matches
-    return [x for score, x in result]
+    return result
 
 
 def _keep_original_ws(s, tag_s):
