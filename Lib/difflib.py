@@ -726,7 +726,7 @@ def get_close_matches(word, possibilities, n=3, cutoff=0.6):
         if s.real_quick_ratio() >= cutoff and \
            s.quick_ratio() >= cutoff and \
            s.ratio() >= cutoff:
-            result.append((round(s.ratio()), x))
+            result.append((round(s.ratio(),3), x))
 
     # Move the best scorers to head of list
     result = _nlargest(n, result)
